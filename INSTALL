@@ -1,0 +1,10 @@
+Steps to install:
+
+1) Copy this folder to a publicly accessible folder on your webserver
+2) Active mod_rewrite in your Apache installation
+3) Change the AllowOverride setting in your virtualhost container to All instead of None
+4) Restart the Apache Web server
+5) Run the install.sh script in the folder where you extracted the framework
+
+Notes:
+The database configuration can be found at: conf/DB.conf.php

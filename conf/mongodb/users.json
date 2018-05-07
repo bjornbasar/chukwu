@@ -1,0 +1,126 @@
+{
+    "name": "user",
+    "type": "object",
+    "description": "a user record",
+    "properties": {
+        "_id": {
+            "type": "bson.ObjectId",
+            "required": true
+        },
+        "username": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "password": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "role": {
+            "type": "bson.ObjectId",
+            "rel": "roles",
+            "required": true,
+            "description": "direct link to roles collection"
+        },
+        "created": {
+            "type": "string",
+            "required": true,
+            "format": "date-time",
+            "description": "the date and time the user has been created"
+        },
+        "updated": {
+            "type": "string",
+            "required": true,
+            "format": "date-time",
+            "description": "the date and time the record has been updated"
+        },
+        "basicinfo": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength": 128
+                },
+                "lastname": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength": 128
+                },
+                "middlename": {
+                    "type": "string",
+                    "required": true,
+                    "maxLength": 128
+                },
+                "prefix": {
+                    "type": "string",
+                    "maxLength": 16
+                },
+                "suffix": {
+                    "type": "string",
+                    "maxLength": 16
+                },
+                "birthdate": {
+                    "type": "string",
+                    "required": true,
+                    "format": "date"
+                },
+                "avatar": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "link to uploaded avatar"
+                }
+            }
+        },
+        "contactinfo": {
+            "type": "object",
+            "properties": {
+                "phone_mobile": {
+                    "type": "string",
+                    "format": "phone",
+                    "maxLength": 32
+                },
+                "phone_office": {
+                    "type": "string",
+                    "format": "phone",
+                    "maxLength": 32
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "alternate_email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
+        "extrainfo": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "type": "bson.ObjectId",
+                        "rel": "extra_fields",
+                        "required": true,
+                        "description": "direct link to extra_fields collection"
+                    },
+                    "value": {
+                        "type": "object",
+                        "description": "value of the extra field, set as object as it may change depending on the data type"
+                    }
+                }
+            }
+        },
+        "employmentinfo": {
+            "type": "object",
+            "properties": {
+                "job_title": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

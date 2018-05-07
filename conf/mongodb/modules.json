@@ -1,0 +1,30 @@
+{
+    "name": "module",
+    "type": "object",
+    "description": "a collection of modules and its objects",
+    "properties": {
+        "_id": {
+            "type": "bson.ObjectId",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 32,
+            "description": "name of the module (i.e. user)"
+        },
+        "display_name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 32
+        },
+        "objects": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "maxLength": 64,
+                "description": "module object. (i.e. basicinfo, extrainfo, etc.)"
+            }
+        }
+    }
+}

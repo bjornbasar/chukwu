@@ -1,0 +1,37 @@
+{
+    "name": "extra_field",
+    "type": "object",
+    "description": "a collection of dynamic custom fields. (i.e. user.height, user.weight)",
+    "properties": {
+        "_id": {
+            "type": "bson.ObjectId",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "display_name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "field": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "display_field": {
+            "type": "string",
+            "required": true,
+            "maxLength": 64
+        },
+        "field_type": {
+            "type": "string",
+            "required": true,
+            "maxLength": 32,
+            "description": "expected input type (i.e.string, number, date, etc.)"
+        }
+    }
+}

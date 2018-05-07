@@ -1,0 +1,53 @@
+{
+    "name": "role",
+    "type": "object",
+    "description": "collection for the role-based access control",
+    "properties": {
+        "_id": {
+            "type": "bson.ObjectId",
+            "required": true
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 32
+        },
+        "display_name": {
+            "type": "string",
+            "required": true,
+            "maxLength": 32
+        },
+        "create": {
+            "type": "array",
+            "items": {
+                "type": "bson.ObjectId",
+                "rel": "modules",
+                "description": "direct link to modules collection"
+            }
+        },
+        "read": {
+            "type": "array",
+            "items": {
+                "type": "bson.ObjectId",
+                "rel": "modules",
+                "description": "direct link to modules collection"
+            }
+        },
+        "update": {
+            "type": "array",
+            "items": {
+                "type": "bson.ObjectId",
+                "rel": "modules",
+                "description": "direct link to modules collection"
+            }
+        },
+        "delete": {
+            "type": "array",
+            "items": {
+                "type": "bson.ObjectId",
+                "rel": "modules",
+                "description": "direct link to modules collection"
+            }
+        }
+    }
+}
